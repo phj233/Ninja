@@ -1,5 +1,15 @@
 # Ninja 
 
+**适配青龙2.10.3之后的版本**
+
+> **测试环境：**
+>
+> 青龙 2.15.4
+>
+> docker-compose 1.29.2
+>
+> Docker 20.10.17
+
 支持CK注册，登录和删除，支持WSKEY录入和删除，登录成功进入个人中心，可修改备注。默认登录CK才可提交WSCK，主页提交WSCK容易乱，不建议。
 
 基本功能已完善，鸽几天，有问题先仔细看此README。
@@ -24,7 +34,7 @@
 
 Ninja 仅供学习参考使用，请于下载后的 24 小时内删除，本人不对使用过程中出现的任何问题负责，包括但不限于 `数据丢失` `数据泄露`。
 
-Ninja 仅支持 qinglong 2.8.2+
+Ninja 仅支持 qinglong 2.10.3+
 
 [TG 频道](https://t.me/joinchat/sHKuteb_lfdjNmZl)
 
@@ -42,11 +52,11 @@ Ninja 仅支持 qinglong 2.8.2+
 
 ## 文档
 
-### 容器内
+### 容器内(推荐使用docker-compose)
 
-1. 容器映射 5701 端口，ninja 目录至宿主机
+1. #### 容器映射 5701 端口，ninja 目录至宿主机
 
-   例（docker-compose）：
+   ##### 例（docker-compose）：
 
    ```diff
    version: "3"
@@ -58,55 +68,54 @@ Ninja 仅支持 qinglong 2.8.2+
        tty: true
        ports:
          - 5700:5700
-   +      - 5701:5701
+         - 5701:5701
        environment:
          - ENABLE_HANGUP=true
          - ENABLE_WEB_PANEL=true
        volumes:
-         - ./config:/ql/config
-         - ./log:/ql/log
-         - ./db:/ql/db
-         - ./repo:/ql/repo
-         - ./raw:/ql/raw
-         - ./scripts:/ql/scripts
-         - ./jbot:/ql/jbot
-   +      - ./ninja:/ql/ninja
+         - ./data:/ql/data
+         - ./data/config:/ql/config
+         - ./data/log:/ql/log
+         - ./data/db:/ql/db
+         - ./data/repo:/ql/repo
+         - ./data/raw:/ql/raw
+         - ./data/scripts:/ql/scripts
+         - ./ninja:/ql/ninja
    ```
 
-   例（docker-run）：
+   
+
+   ##### 例（docker-run）：
 
    ```diff
    docker run -dit \
-     -v $PWD/ql/config:/ql/config \
-     -v $PWD/ql/log:/ql/log \
-     -v $PWD/ql/db:/ql/db \
-     -v $PWD/ql/repo:/ql/repo \
-     -v $PWD/ql/raw:/ql/raw \
-     -v $PWD/ql/scripts:/ql/scripts \
-     -v $PWD/ql/jbot:/ql/jbot \
-   + -v $PWD/ql/ninja:/ql/ninja \
+     -v $PWD/ql/data/config:/ql/config \
+     -v $PWD/ql/data/log:/ql/log \
+     -v $PWD/ql/data/db:/ql/db \
+     -v $PWD/ql/data/repo:/ql/repo \
+     -v $PWD/ql/data/raw:/ql/raw \
+     -v $PWD/ql/data/scripts:/ql/scripts \
+     -v $PWD/ql/ninja:/ql/ninja \
      -p 5700:5700 \
-   + -p 5701:5701 \
+     -p 5701:5701 \
      --name qinglong \
      --hostname qinglong \
      --restart unless-stopped \
      whyour/qinglong:latest
    ```
 
-2. 进容器内执行以下命令
-
-   **进容器内执行以下命令**
+2. #### 进容器内执行以下命令
 
    ```bash
-   git clone https://github.com/Waikkii/waikiki_ninja.git /ql/ninja
+   git clone https://github.com/phj233/Waikiki_ninja.git /ql/ninja
    cd /ql/ninja/backend
    pnpm install
    cp .env.example .env # 如有需要, 修改.env
    pm2 start
    cp sendNotify.js /ql/scripts/sendNotify.js
    ```
-
-3. 将以下内容粘贴到 `extra.sh`（重启后自动更新并启动 Ninja）
+   
+3. #### 将以下内容粘贴到 `extra.sh`（重启后自动更新并启动 Ninja）
 
    ```bash
    cd /ql/ninja/backend
@@ -114,7 +123,6 @@ Ninja 仅支持 qinglong 2.8.2+
    git pull
    pnpm install
    pm2 start
-   cp sendNotify.js /ql/scripts/sendNotify.js
    ```
 
 ### 容器外
@@ -124,7 +132,7 @@ Ninja 仅支持 qinglong 2.8.2+
 使用此种方法无法跟随青龙一起启动，**无法发送扫码通知**，请知悉。
 
 ```bash
-git clone https://github.com/Waikkii/waikiki_ninja.git
+git clone https://github.com/phj233/Waikiki_ninja.git
 cd ninja/backend
 pnpm install
 # 复制 sendNotify.js 到容器内 scripts 目录，`qinglong` 为容器名

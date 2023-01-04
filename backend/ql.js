@@ -68,7 +68,7 @@ module.exports.updateEnv = async (cookie, eid, remarks) => {
     json: {
       name: 'JD_COOKIE',
       value: cookie,
-      _id: eid,
+      id: eid,
       remarks,
     },
     headers: {
@@ -148,7 +148,7 @@ module.exports.updateWSCKEnv = async (jdwsck, wseid, remarks) => {
     json: {
       name: 'JD_WSCK',
       value: jdwsck,
-      _id: wseid,
+      id: wseid,
       remarks,
     },
     headers: {
