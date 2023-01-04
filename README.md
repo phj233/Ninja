@@ -20,6 +20,10 @@
 
 仓库地址：https://github.com/MoonBegonia/ninja
 
+感谢Ninja 二改作者：@Waikiki
+
+仓库地址：https://github.com/Waikkii/Waikiki_ninja.git
+
 感谢WSCK功能原作者：@huiyi9420
 
 仓库地址：https://github.com/huiyi9420/ninja
@@ -107,7 +111,7 @@ Ninja 仅支持 qinglong 2.10.3+
 2. #### 进容器内执行以下命令
 
    ```bash
-   git clone https://github.com/phj233/Waikiki_ninja.git /ql/ninja
+   git clone https://github.com/phj233/Ninja.git /ql/ninja
    cd /ql/ninja/backend
    pnpm install
    cp .env.example .env # 如有需要, 修改.env
@@ -132,7 +136,7 @@ Ninja 仅支持 qinglong 2.10.3+
 使用此种方法无法跟随青龙一起启动，**无法发送扫码通知**，请知悉。
 
 ```bash
-git clone https://github.com/phj233/Waikiki_ninja.git
+git clone https://github.com/phj233/Ninja.git
 cd ninja/backend
 pnpm install
 # 复制 sendNotify.js 到容器内 scripts 目录，`qinglong` 为容器名
