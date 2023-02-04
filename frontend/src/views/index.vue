@@ -7,6 +7,7 @@
       <div class="card-body">
         <p>昵称：{{ nickName }}</p>
         <p>更新时间：{{ timestamp }}</p>
+        <p>备注：cookie有效期大概30天,请及时更新</p>
       </div>
       <div class="card-footer">
         <el-button size="small" auto @click="logout">退出登录</el-button>
