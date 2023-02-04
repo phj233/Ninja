@@ -163,7 +163,7 @@ export default {
     }
 
     const showQrcode = async () => {
-      data.qrCodeVisibility = false
+      data.qrCodeVisibility = true
     }
 
     const jumpLogin = async () => {
