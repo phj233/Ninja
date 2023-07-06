@@ -6,7 +6,7 @@ const { readFile } = require('fs/promises');
 const path = require('path');
 
 const qlDir = process.env.QL_DIR || '/ql';
-const authFile = path.join(qlDir, 'config/auth.json');
+const authFile = path.join(qlDir, '/data/config/auth.json');
 
 const api = got.extend({
   prefixUrl: process.env.QL_URL || 'http://localhost:5600',
