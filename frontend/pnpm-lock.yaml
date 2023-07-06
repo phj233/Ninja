@@ -2,7 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@vitejs/plugin-vue': ^1.2.5
-  '@vue/compiler-sfc': ^3.1.5
   autoprefixer: ^10.3.1
   element-plus: ^1.0.2-beta.62
   ky: ^0.28.5
@@ -22,7 +21,6 @@ dependencies:
 
 devDependencies:
   '@vitejs/plugin-vue': 1.2.5_@vue+compiler-sfc@3.1.5
-  '@vue/compiler-sfc': 3.1.5_vue@3.1.5
   autoprefixer: 10.3.1_postcss@8.3.6
   postcss: 8.3.6
   tailwindcss: 2.2.7_7b69a43ec4689fa7484dee35f79a7806
@@ -312,15 +310,6 @@ packages:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
 
-  /@vitejs/plugin-vue/1.2.5_@vue+compiler-sfc@3.1.5:
-    resolution: {integrity: sha512-GIR31mdXTEfvElmBUaRhDc5v7lfdkEdawWQqJRiaRL/5qKsH+xusukglkvJz5y7+c6dEpxgmvcATv2BbB7+fzQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@vue/compiler-sfc': ^3.0.8
-    dependencies:
-      '@vue/compiler-sfc': 3.1.5_vue@3.1.5
-    dev: true
-
   /@vue/compiler-core/3.1.5:
     resolution: {integrity: sha512-TXBhFinoBaXKDykJzY26UEuQU1K07FOp/0Ie+OXySqqk0bS0ZO7Xvl7UmiTUPYcLrWbxWBR7Bs/y55AI0MNc2Q==}
     dependencies:
@@ -335,31 +324,6 @@ packages:
     dependencies:
       '@vue/compiler-core': 3.1.5
       '@vue/shared': 3.1.5
-
-  /@vue/compiler-sfc/3.1.5_vue@3.1.5:
-    resolution: {integrity: sha512-mtMY6xMvZeSRx9MTa1+NgJWndrkzVTdJ1pQAmAKQuxyb5LsHVvrgP7kcQFvxPHVpLVTORbTJWHaiqoKrJvi1iA==}
-    peerDependencies:
-      vue: 3.1.5
-    dependencies:
-      '@babel/parser': 7.14.8
-      '@babel/types': 7.14.8
-      '@types/estree': 0.0.48
-      '@vue/compiler-core': 3.1.5
-      '@vue/compiler-dom': 3.1.5
-      '@vue/compiler-ssr': 3.1.5
-      '@vue/shared': 3.1.5
-      consolidate: 0.16.0
-      estree-walker: 2.0.2
-      hash-sum: 2.0.0
-      lru-cache: 5.1.1
-      magic-string: 0.25.7
-      merge-source-map: 1.1.0
-      postcss: 8.3.6
-      postcss-modules: 4.2.2_postcss@8.3.6
-      postcss-selector-parser: 6.0.6
-      source-map: 0.6.1
-      vue: 3.1.5
-    dev: true
 
   /@vue/compiler-ssr/3.1.5:
     resolution: {integrity: sha512-CU5N7Di/a4lyJ18LGJxJYZS2a8PlLdWpWHX9p/XcsjT2TngMpj3QvHVRkuik2u8QrIDZ8OpYmTyj1WDNsOV+Dg==}

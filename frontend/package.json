@@ -13,10 +13,11 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.5",
-    "@vue/compiler-sfc": "^3.1.5",
     "autoprefixer": "^10.3.1",
     "postcss": "^8.3.6",
     "tailwindcss": "^2.2.7",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1",
     "vite": "^2.4.3",
     "vite-plugin-async-catch": "^0.1.7",
     "vite-plugin-style-import": "^1.0.1"
